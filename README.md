@@ -14,6 +14,6 @@ docker run <YOUR_APP_NAME>
 ### Question - If you had flexibility to choose a model to tackle this problem, what model would that be?
 Although using a deep learning model to predict Y was highly accurate, I would still opt for a simpler model like an XGBoost regressor for the reasons below.
 
-1. Size and nature of the dataset - As we're only training on 14k  records which are tabular, Neural Networks may not be the best choice as they usually perform better when fed with larger datasets that are unstructured like images and text.
-2. Tradeoff between Accuracy VS Computation - Running a simple XGBoost Regressor on the dataset, I got a result of a MAE score of **10.68**, which compared to the Neural Network score, is not much worse off given the computing complexity difference between the two models. 
-3. Interpretability of Model - Understanding an XGBoost model is often times a lot easier than understanding a Neural Network, using tools like SHAP to provide feature importance in the model. 
+1. **Size and nature of the dataset** - As we're only training on 14k  records which are tabular, Neural Networks may not be the best choice as they usually perform better when fed with larger datasets that are unstructured like images and text.
+2. **Tradeoff between Accuracy VS Computation** - Running a simple XGBoost Regressor on the dataset, I got a result of a MAE score of **10.68**, which compared to the Neural Network score, is not much worse off given the computing complexity difference between the two models. 
+3. **Interpretability of Model** - Understanding an XGBoost model is often times a lot easier than understanding a Neural Network, using tools like SHAP to provide feature importance in the model. 
