@@ -61,6 +61,7 @@ Once I have gathered the information detailed above, I would suggest a few actio
 3. Batch Processing Frames
 - Instead of processing frames individually, processing frames in batches may prove more cost efficient, especially with dealing with highly parallelizable task such as image processing. We can utilise services like AWS Batch for managing batch processing workloads.
 4. Consideration of SNS and SQS
+- This should be primarily used when setting up triggers from videos landing in S3 to getting them processed in EC2. We would use SNS to send out notifications from triggers while SQS is used to manage the queues of tasks to be done.
 
 #### High Level Architecture
 With all the information gathered and the suggestions above, the high level solution diagram below should highlight what the architecture might look like.
