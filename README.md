@@ -51,6 +51,17 @@ Once I have gathered the information detailed above, I would suggest a few actio
 3. Data Storage Optimisation
 - As we will be storing huge volumes of data, due to processing footage in near real time, storage costs may inflate quickly if we don't monitor costs. Using S3 as our primary blob storage, we should ensure that lifecycle policies are in place to move old/archived video footage to lower-cost storage classes like S3 Glacier, or even just deleting them if persistence is not required.
 
+#### Extra Considerations
+1. Going Serverless (EC2 vs Lambda)
+- A serverless option could be considered if traffic arrives in period intervals and there is a low amount of total request to the Computer Vision model.
+- However a limitation of using Lambda is that there is a cap on execution duration and resource allocation, requiring further optimisation
+- EC2 on the hand would require more frequent patching and instance upgrades since they are not managed services.
+2. Content Delivery Network (CDN)
+- If video footage need to be frequently accessed by end-users, using a CDN service like Amazon Cloudfront could be considered to cache video data, especially if users want to rewind video footage to see the object/people detection.
+3. Batch Processing Frames
+- Instead of processing frames individually, processing frames in batches may prove more cost efficient, especially with dealing with highly parallelizable task such as image processing. We can utilise services like AWS Batch for managing batch processing workloads.
+4. Consideration of SNS and SQS
+
 #### High Level Architecture
 With all the information gathered and the suggestions above, the high level solution diagram below should highlight what the architecture might look like.
 
