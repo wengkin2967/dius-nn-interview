@@ -1,4 +1,4 @@
-# DiUS Interview - Kin Lee
+# Neural Network Coding Challenge - Kin Lee
 
 ## Part 1
 ### Exploration 
